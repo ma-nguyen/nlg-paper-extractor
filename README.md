@@ -134,6 +134,13 @@ Results are saved as a JSON file in `data/`:
           "goal": "...",
           "findings": "..."
         }
+      },
+      {
+        "model": "qwen3-30b-a3b-instruct-2507",
+        "response": {
+          "goal": "...",
+          "findings": "..."
+        }
       }
     ]
   }
