@@ -30,6 +30,8 @@ cd nlg-paper-extractor
 ```
 
 **2. Create and activate a virtual environment:**
+
+
 **Mac/Linux:**
 ```bash
 python3.11 -m venv .venv
