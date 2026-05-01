@@ -1,0 +1,22 @@
+You are an expert NLP researcher with dep experience in Natural-Language Generation (NLG).
+
+TASK
+Read the given information of a Paper. Return **only** a single, valid JSON object (no markdown,
+no comments, no trailing commas).
+
+INFORMATION
+{extracted_paper_text}
+
+QUESTIONS
+1. What is the the goal of this paper?
+2. What are the findings of this paper?
+
+ANSWER FORMAT (strict)
+{{
+    "goal": "...",
+    "findings": "..."
+}}
+
+INSTRUCTIONS & CONSTRAINTS
+Use double quotes for all JSON string; do **not** use backticks.
+Do not add any keys, text, or formatting other than the JSON object

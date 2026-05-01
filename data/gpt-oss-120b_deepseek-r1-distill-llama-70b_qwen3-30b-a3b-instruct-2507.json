@@ -1,0 +1,132 @@
+[
+  {
+    "paper": "On the Blind Spots of Model-Based Evaluation Metrics for Text Generation",
+    "results": [
+      {
+        "model": "gpt-oss-120b",
+        "response": {
+          "goal": "To introduce and apply a suite of synthetic stress tests for robustness analysis of pretrained\u2011language\u2011model\u2011based evaluation metrics across open\u2011ended generation, translation, and summarization, in order to uncover and understand their blind spots.",
+          "findings": "The stress tests reveal numerous systematic weaknesses in popular PLM\u2011based metrics: BERTScore fails under truncation errors in summarization; MAUVE (with GPT\u20112 features) is insensitive to errors at the start or middle of texts, while MAUVE\u2011ELECTRA is more robust; GPT\u2011PPL and MLM\u2011PPL are biased toward frequent n\u2011grams and can assign higher scores to artificially repetitive sequences; self\u2011evaluation bias causes log\u2011probability metrics (GPT\u2011PPL, BARTScore) to favor systems that share the same underlying PLM; several metrics (BARTScore variants, BERTScore, ROUGE, COMET, PRISM, UniEval, MAUVE\u2011RoBERTa) fail truncation tests, and BARTScore\u2011para\u2011recall and MAUVE\u2011RoBERTa fail sentence\u2011switching tests; injection tests show UniEval can be manipulated by valueless instruction text; overall, metric design choices and PLM properties lead to insensitivities, biases, and loopholes, prompting practical workarounds such as using alternative PLM features, reporting precision/recall separately, and combining complementary metrics."
+        }
+      },
+      {
+        "model": "deepseek-r1-distill-llama-70b",
+        "response": {
+          "goal": "The goal of this paper is to identify and analyze the blind spots of model-based evaluation metrics for text generation, particularly those based on pretrained language models (PLMs), through systematic stress tests using synthetic data.",
+          "findings": "The findings reveal that several popular PLM-based metrics, such as BERTScore and MAUVE, exhibit significant insensitivities, biases, or loopholes when exposed to synthetic errors. For instance, BERTScore is confused by truncation errors in summarization, and MAUVE is insensitive to errors at the beginning or middle of generations. The study also highlights that the choice of PLM features can significantly impact a metric's robustness, and suggests practical workarounds for more reliable evaluations, such as using combinations of metrics to cover each other's blind spots."
+        }
+      },
+      {
+        "model": "qwen3-30b-a3b-instruct-2507",
+        "response": {
+          "goal": "The goal of this paper is to develop a methodology for robustness analysis of model-based evaluation metrics in text generation using stress tests with synthetic data. The authors aim to identify blind spots, biases, and potential loopholes in recently proposed pretrained language model (PLM)-based metrics across tasks such as open-ended generation, translation, and summarization by systematically inducing various types of errors and evaluating the resulting metric score drops.",
+          "findings": "The paper reveals several critical blind spots in existing PLM-based metrics: BERTScore is insensitive to truncation errors in summarization, MAUVE (especially with GPT-2 features) fails to detect errors at the beginning or middle of generations due to limited long-range context encoding, and MAUVE is vulnerable to valueless injection text that tricks the metric into giving high scores. Additionally, log-probability-based metrics like GPT-PPL and BARTScore exhibit self-evaluation bias when the generator and evaluator are based on the same PLM. Frequent n-gram sequences, which lack global coherence, are incorrectly scored higher by GPT-PPL and MLM-PPL. The study also finds that some metrics fail to penalize sentence switching and truncation, indicating insensitivity to logical and informational consistency. The authors suggest using combinations of metrics, selecting better PLM features (e.g., ELECTRA over GPT-2 for MAUVE), and complementing log-probability metrics with reference-based or diversity metrics for more reliable evaluation."
+        }
+      }
+    ]
+  },
+  {
+    "paper": "Finding Blind Spots in Evaluator LLMs with Interpretable Checklists",
+    "results": [
+      {
+        "model": "gpt-oss-120b",
+        "response": {
+          "goal": "To develop and employ the FBI framework\u2014a meta\u2011evaluation checklist using targeted perturbations\u2014to systematically assess how well evaluator LLMs can detect quality degradations in factual accuracy, instruction following, long\u2011form coherence, and reasoning of other LLMs across single\u2011answer, pairwise, and reference\u2011guided evaluation strategies.",
+          "findings": "Current evaluator LLMs perform poorly: they fail to identify quality drops in over 50% of perturbed cases on average. Single\u2011answer and pairwise evaluations show notable limitations, while reference\u2011based evaluation is relatively more reliable but still imperfect. GPT\u20114\u2011Turbo, despite being the strongest, still misses many errors except in reasoning tasks; other models (Gemini\u20111.5\u2011PRO, Claude\u20113\u2011Opus, Llama\u20113\u201170B\u2011Instruct, Prometheus) exhibit similar or worse shortcomings. Adding rubrics or axes does not consistently improve detection, and expanding scoring ranges offers only marginal gains."
+        }
+      },
+      {
+        "model": "deepseek-r1-distill-llama-70b",
+        "response": {
+          "goal": "The goal of this paper is to assess the effectiveness of large language models (LLMs) as evaluators for text generation tasks by identifying their blind spots through targeted perturbations.",
+          "findings": "The findings reveal that current Evaluator LLMs have significant shortcomings, failing to identify quality drops in over 50% of cases on average. Single-answer and pairwise evaluations showed notable limitations, while reference-based evaluations performed relatively better, though still imperfect."
+        }
+      },
+      {
+        "model": "qwen3-30b-a3b-instruct-2507",
+        "response": {
+          "goal": "The goal of this paper is to investigate the effectiveness of Large Language Models (LLMs) as evaluators for text generation tasks by introducing FBI, a novel meta-evaluation framework that uses interpretable checklists to identify blind spots in Evaluator LLMs across four critical abilities: factual accuracy, instruction following, coherence in long-form writing, and reasoning proficiency.",
+          "findings": "The findings reveal significant shortcomings in current Evaluator LLMs, which failed to identify quality drops in over 50% of cases on average. Single-answer and pairwise evaluations demonstrated notable limitations, while reference-based evaluations showed comparatively better performance. Even advanced models like GPT-4-TURBO performed poorly across most evaluation strategies, and explanations provided by evaluators were only marginally helpful in detecting perturbations. The study underscores the unreliable nature of current Evaluator LLMs and calls for cautious implementation in practical applications."
+        }
+      }
+    ]
+  },
+  {
+    "paper": "Order in the Evaluation Court: A Critical Analysis of NLG Evaluation Trends",
+    "results": [
+      {
+        "model": "gpt-oss-120b",
+        "response": {
+          "goal": "To systematically analyze how evaluation practices in Natural Language Generation have evolved over the past six years by automatically extracting and quantifying evaluation methods (automatic metrics, LLM-as-judge, and human evaluation) from 14,171 papers across major NLG conferences.",
+          "findings": "The study uncovers (1) task\u2011specific shifts: Dialogue Generation rapidly adopts LaaJ (>40% in 2025) while Machine Translation remains tied to n\u2011gram metrics and Question Answering shows a steep drop in human evaluation; (2) metric inertia: generic metrics such as BLEU and ROUGE dominate across tasks despite the availability of more semantically aware metrics, often without empirical justification; (3) a validation gap: only a small minority of papers (<8%) directly compare LaaJ to human judgments, and the reported correlations are moderate to low, indicating that LaaJ and human evaluations prioritize different quality signals; (4) overall, LaaJ adoption has surged since 2023 but is rarely corroborated by human studies, highlighting a disconnect between automated and human evaluation methodologies."
+        }
+      },
+      {
+        "model": "deepseek-r1-distill-llama-70b",
+        "response": {
+          "goal": "To systematically review and analyze the evolution of evaluation methods in Natural Language Generation (NLG) research, focusing on the trends and challenges in metrics, LLM-based evaluation (LaaJ), and human evaluation.",
+          "findings": "The paper identifies three main findings: (1) Task Divergence: Different NLG tasks adopt evaluation methods at varying rates, with Dialogue Generation rapidly shifting to LaaJ, Machine Translation sticking to n-gram metrics, and Question Answering showing a decline in human evaluation. (2) Metric Inertia: Traditional metrics like BLEU and ROUGE remain widely used despite the development of more advanced semantic metrics. (3) Human-LaaJ Divergence: LaaJ and human evaluations prioritize different quality signals, with limited validation between the two, leading to only moderate to low correlation."
+        }
+      },
+      {
+        "model": "qwen3-30b-a3b-instruct-2507",
+        "response": {
+          "goal": "To systematically analyze and critique the evolution of Natural Language Generation (NLG) evaluation practices over the past six years by leveraging a large-scale, multi-LLM information extraction pipeline on 14,171 papers from four major NLP conferences, with the aim of identifying critical flaws in current evaluation trends and providing actionable recommendations to improve rigor and alignment with human judgment.",
+          "findings": "The study reveals three critical findings: (1) Task Divergence\u2014Dialogue Generation rapidly adopts LLM-as-a-judge (LaaJ) methods (>40% in 2025), Machine Translation remains locked into n-gram metrics like BLEU, and Question Answering shows a sharp decline in human evaluation; (2) Metric Inertia\u2014general-purpose metrics such as BLEU and ROUGE persist across tasks without empirical justification, despite their poor discriminative power for specific quality criteria; (3) Human-LaaJ Divergence\u2014LaaJ and human evaluations prioritize fundamentally different signals, with only moderate to low correlation and less than 8% of papers explicitly validating LaaJ against human judgment, challenging the assumption that LLMs are reliable proxies for human evaluators."
+        }
+      }
+    ]
+  },
+  {
+    "paper": "Unveiling the Achilles' Heel of NLG Evaluators: A Unified Adversarial Framework Driven by Large Language Models",
+    "results": [
+      {
+        "model": "gpt-oss-120b",
+        "response": {
+          "goal": "To propose AdvEval, a unified black\u2011box adversarial framework that uses large language models as both data generators and gold evaluators to automatically craft high\u2011quality adversarial NLG samples that induce strong disagreement between human judgments and existing automatic NLG evaluators, thereby revealing and quantifying the robustness weaknesses of these evaluators across multiple tasks.",
+          "findings": "AdvEval substantially outperforms rule\u2011based and optimization\u2011based baselines on 11 datasets covering dialogue, summarization, and question generation, achieving high attack success rates (e.g., 84.8% R+ and 92.5% R\u2011 for dialogue, 85% R+ and 58.8% R\u2011 for summarization). All 12 victim metrics are vulnerable, with R\u2011 attacks generally easier than R+. The LLM\u2011based gold evaluator serves as a reliable human proxy (over 80% agreement with manual labels). The framework\u2019s larger search space and LLM\u2011driven feedback enable generation of diverse, high\u2011quality adversarial texts, confirming that current NLG evaluators lack robustness to such attacks."
+        }
+      },
+      {
+        "model": "deepseek-r1-distill-llama-70b",
+        "response": {
+          "goal": "The goal of this paper is to systematically evaluate the robustness of natural language generation (NLG) evaluators and propose a novel framework called AdvEval to generate adversarial samples that can degrade the performance of these evaluators.",
+          "findings": "The findings demonstrate that AdvEval, a black-box adversarial framework, can effectively generate high-quality adversarial data that lead to significant performance degradation of various NLG evaluators across different tasks such as dialogue, summarization, and question evaluation. The framework outperforms existing methods in creating both types of adversarial samples and highlights the vulnerability of current evaluation metrics."
+        }
+      },
+      {
+        "model": "qwen3-30b-a3b-instruct-2507",
+        "response": {
+          "goal": "The goal of this paper is to systematically evaluate the robustness of automatic natural language generation (NLG) evaluators against adversarial perturbations and to propose AdvEval, a novel black-box adversarial framework that generates high-quality, diverse adversarial data to expose critical weaknesses in these evaluators by creating strong disagreements between human judgments and victim evaluator scores.",
+          "findings": "AdvEval effectively generates adversarial samples that lead to significant performance degradation across 12 victim evaluators on 11 NLG datasets spanning dialogue, summarization, and question evaluation tasks. It outperforms existing rule-based and optimization-based baselines in both R+ (high human quality, low victim score) and R- (low human quality, high victim score) attack success rates. The framework's superiority stems from its large search space enabled by LLM generation and improved label integrity via LLM-based gold evaluators. Manual validation confirms the high reliability of the gold evaluator as a human proxy, and ablation studies demonstrate the critical role of the gold evaluator and evaluation criteria in guiding effective adversarial generation."
+        }
+      }
+    ]
+  },
+  {
+    "paper": "LLM Comparative Assessment: Zero-shot NLG Evaluation through Pairwise Comparisons using Large Language Models",
+    "results": [
+      {
+        "model": "gpt-oss-120b",
+        "response": {
+          "goal": "To investigate the use of large language models (LLMs) for zero\u2011shot natural language generation (NLG) evaluation via pairwise (comparative) judgments, compare this approach to absolute score prediction, analyse positional biases in the comparisons, and explore efficient ranking strategies requiring fewer comparisons.",
+          "findings": "Pairwise comparative assessment consistently outperforms absolute prompt\u2011scoring for moderate\u2011sized open\u2011source LLMs (FlanT5, Llama2\u2011chat), achieving Spearman correlations comparable to or better than state\u2011of\u2011the\u2011art and ChatGPT\u2011based methods across summarization, dialogue, podcast and data\u2011to\u2011text tasks. The method works even for sub\u20111B models and shows diminishing returns after ~3B parameters. LLMs exhibit strong positional bias (favoring one position), especially in larger models; a simple re\u2011weighting debiasing technique reduces this bias and yields further performance gains, notably for biased systems. Efficient ranking with a subset of comparisons (random, no\u2011repeat, symmetric) retains most of the performance, and debiasing is especially beneficial when few comparisons are used. Overall, comparative assessment is a simple, general, zero\u2011shot NLG evaluation approach that surpasses absolute scoring and approaches or exceeds existing zero\u2011shot and supervised baselines."
+        }
+      },
+      {
+        "model": "deepseek-r1-distill-llama-70b",
+        "response": {
+          "goal": "The goal of this paper is to propose and evaluate a zero-shot approach for natural language generation (NLG) evaluation using large language models (LLMs) through pairwise comparative assessment.",
+          "findings": "The findings demonstrate that LLM-based comparative assessment is a simple, general, and effective method for NLG evaluation. It outperforms absolute scoring methods, especially for moderately sized LLMs, and achieves near state-of-the-art performance across various NLG tasks. Additionally, the study identifies positional biases in LLM comparisons and introduces debiasing methods that improve performance, particularly for biased systems."
+        }
+      },
+      {
+        "model": "qwen3-30b-a3b-instruct-2507",
+        "response": {
+          "goal": "The goal of this paper is to investigate and demonstrate the effectiveness of LLM comparative assessment as a zero-shot, general, and simple approach for natural language generation (NLG) evaluation, particularly focusing on its superiority over prompt-scoring for moderate-sized open-source LLMs, and to address and mitigate positional biases in pairwise comparisons.",
+          "findings": "LLM comparative assessment outperforms prompt-scoring for moderate-sized open-source LLMs (e.g., FlanT5 and Llama2), achieving near or above state-of-the-art performance across multiple NLG tasks and attributes; it is generalizable, requires minimal prompt engineering, and enables smaller models to perform competitively; however, LLMs exhibit strong positional biases in pairwise comparisons, which can be effectively mitigated through a simple debiasing method, leading to significant performance improvements\u2014especially when using a limited number of comparisons."
+        }
+      }
+    ]
+  }
+]
