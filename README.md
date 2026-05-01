@@ -30,9 +30,16 @@ cd nlg-paper-extractor
 ```
 
 **2. Create and activate a virtual environment:**
+**Mac/Linux:**
 ```bash
-python3 -m venv .venv
+python3.11 -m venv .venv
 source .venv/bin/activate
+```
+
+**Windows:**
+```bash
+py -3.11 -m venv .venv
+.venv\Scripts\activate
 ```
 
 **3. Install dependencies:**
