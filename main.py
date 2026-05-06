@@ -35,7 +35,7 @@ def main():
         paper = extract_paper_data(paper_path)
         add_extracted_paper(all_extracted_papers, paper)
 
-        break # Debugging for only 1 paper
+        #break # Debugging for only 1 paper
 
     export_to_csv(all_extracted_papers, OUTPUT_CSV_PATH)
     export_to_html(all_extracted_papers, OUTPUT_HTML_PATH)

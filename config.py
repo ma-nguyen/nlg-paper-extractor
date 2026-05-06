@@ -8,8 +8,8 @@ PROMPT_TEMPLATE_DIR = BASE_DIR / "prompt_templates"
 
 MODELS = [
     "gpt-oss-120b",
-    "deepseek-r1-distill-llama-70b",
-    "qwen3-30b-a3b-instruct-2507"
+    "mistral-large-3-675b-instruct-2512",
+    "qwen3.5-397b-a17b"
 ]
 MODEL_NAMES = "_".join(MODELS)
 OUTPUT_PATH = BASE_DIR / "data" / f"{MODEL_NAMES}.json"

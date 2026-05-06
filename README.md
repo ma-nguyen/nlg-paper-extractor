@@ -149,7 +149,9 @@ Each model is called independently for every paper. Results are stored per model
 
 ## Output Format
 
-Results are saved as a JSON file in `data/`:
+Results are saved incrementally to `data/` after each paper is processed. Output files are named after the active model selection in `config.py`, so switching models and re-running will produce separate files without overwriting previous results.
+
+Open `[MODEL_NAMES].html` in any browser to review model outputs side by side.
 
 ```json
 [
