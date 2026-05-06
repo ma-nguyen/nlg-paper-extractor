@@ -129,3 +129,13 @@ def extract_paper_data(pdf_path: str) -> dict:
         "sections": sections,
     }
 
+    # hardcoded example if not using docker
+    # return {
+    #     "title": "Test Paper",
+    #     "abstract": "This is a test abstract.",
+    #     "sections": [
+    #         {"section": "Introduction", "text": "This is the introduction."},
+    #         {"section": "Conclusion", "text": "This is the conclusion."}
+    #     ]
+    # }
+

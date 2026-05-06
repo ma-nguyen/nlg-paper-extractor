@@ -54,26 +54,52 @@ pip install -r requirements.txt
 API_KEY=your_api_key_here
 ```
 
-**5. Start GROBID via Docker:**
+---
+
+## Usage
+**1. Open Docker Desktop**
+
+**2 Start GROBID via Docker:**
 ```bash
 docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.8.0
 ```
 
-GROBID must be running before you run the extractor.
+**3. Activate the virtual environment:**
 
----
+**Mac/Linux:**
+```bash
+source .venv/bin/activate
+```
 
-## Usage
+**Windows:**
+```bash
+.venv\Scripts\activate
+```
 
-**1. Add your PDF papers to the `papers/` folder.**
+**4. Add your PDF papers to the `papers/` folder.**
 
-**2. Run the extractor:**
+**5. Run the extractor:**
 ```bash
 python main.py
 ```
 
 Results are saved incrementally to `data/` after each paper is processed. If the script is interrupted, re-running it will skip already-processed papers and only process the remaining ones.
 The human readable versions in CSV for export and HTML are in ```data/``` as well. Open `[MODEL_NAMES].html` in any browser to review model outputs side by side.
+
+---
+## Shutdown
+
+**Deactivate the virtual environment:**
+```bash
+deactivate
+```
+
+**Stop the GROBID container:**
+```bash
+docker stop $(docker ps -q --filter ancestor=lfoppiano/grobid:0.8.0)
+```
+
+Then close Docker Desktop if you no longer need it.
 
 ---
 
