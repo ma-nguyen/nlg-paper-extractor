@@ -54,8 +54,11 @@ def add_extracted_paper(all_extracted_papers: List, extracted_paper: dict) -> No
 
     if existing:
         existing["results"].extend(model_results)
+        print(f"{title} - entry extended by {', '.join(missing_models)}")
     else:
         all_extracted_papers.append({"paper": title, "results": model_results})
+        print(f"{title} - entry added")
+
 
     with open(OUTPUT_PATH, "w") as f:
         json.dump(all_extracted_papers, f, indent=2)
