@@ -61,7 +61,7 @@ API_KEY=your_api_key_here
 
 **2 Start GROBID via Docker:**
 ```bash
-docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.8.0
+docker run -d --rm -p 8070:8070 lfoppiano/grobid:0.8.0
 ```
 
 **3. Activate the virtual environment:**
